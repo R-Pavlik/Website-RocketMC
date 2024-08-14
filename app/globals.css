@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('tools/fonts/Kanit-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Lexend';
+    src: url('tools/fonts/Lexend-Regular.ttf') format('truetype');
+}
+
+.kanitfont {
+    font-family: 'Kanit', sans-serif;
+}
+
+.lexendfont {
+    font-family: 'Lexend', sans-serif;
+}
