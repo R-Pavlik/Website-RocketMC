@@ -15,7 +15,8 @@
 
 # production
 /build
-
+/app/api/firebaseConfig.js
+/RocketMC-Web.zip
 # misc
 .DS_Store
 *.pem
