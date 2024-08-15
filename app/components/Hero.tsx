@@ -8,7 +8,7 @@ export default function Hero() {
 
 
           <div className=' w-screen flex md:flex-row flex-col gap-4 justify-center items-center mt-6 '>
-          <a href="http://" className='w-[250px] h-[40px] bg-discord-blue px-2 py-7 rounded-lg flex flex-row justify-center items-center gap-2 text-white font-bold kanitfont text-xl'> 
+          <a href="https://discord.gg/C3BK7pTeNw" className='w-[250px] h-[40px] bg-discord-blue px-2 py-7 rounded-lg flex flex-row justify-center items-center gap-2 text-white font-bold kanitfont text-xl'> 
           <FaDiscord className=' w-10 h-10' /> DISCORD SERVER
           </a>
           <a href="http://" className='w-[250px] h-[40px] bg-instagram-pink px-2 py-7 rounded-lg flex flex-row justify-center items-center gap-2 text-white font-bold kanitfont text-xl'> 
