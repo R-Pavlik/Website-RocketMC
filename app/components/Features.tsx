@@ -34,7 +34,7 @@ const features: Features[] = [
   {
     icon: "FaServer",
     title: "Own servers",
-    description: "Our server runs on our own optimised hight speed servers!",
+    description: "Our server runs on our own optimised highest speed servers!",
   },
   {
     icon: "FaCode",
