@@ -34,13 +34,17 @@ export default function BlogPostsComponent() {
     fetchBlogPosts();
   }, []);
 
-  if (loading) return <div className=' w-screen h-screen flex justify-center items-start bg-darkgray'><div className='w-[10%] h-[10%]'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle fill="#E96745" stroke="#E96745" stroke-width="8" r="15" cx="40" cy="100"><animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.4"></animate></circle><circle fill="#E96745" stroke="#E96745" stroke-width="8" r="15" cx="100" cy="100"><animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.2"></animate></circle><circle fill="#E96745" stroke="#E96745" stroke-width="8" r="15" cx="160" cy="100"><animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="0"></animate></circle></svg></div></div>;
-  return (
-    <div className="w-screen h-full bg-darkgray">
-      <div className="w-screen h-[90px] flex justify-center items-center">
+  if (loading) return <div className=' w-screen h-screen flex flex-col justify-center items-center bg-darkgray'>
+    <div className="w-screen h-[90px] flex justify-center items-center">
         <h1 className="kanitfont text-4xl text-white">Blog Posts</h1>
       </div>
-      <div className="w-screen md:h-[920px] h-full flex flex-col-reverse justify-center items-center p-2 gap-6">
+      <div className='w-[10%] h-[10%]'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle fill="#E96745" stroke="#E96745" stroke-width="8" r="15" cx="40" cy="100"><animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.4"></animate></circle><circle fill="#E96745" stroke="#E96745" stroke-width="8" r="15" cx="100" cy="100"><animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.2"></animate></circle><circle fill="#E96745" stroke="#E96745" stroke-width="8" r="15" cx="160" cy="100"><animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="0"></animate></circle></svg></div></div>;
+  return (
+    <div className="w-screen h-full bg-darkgray">
+      <div className="w-screen h-[90px] flex justify-center items-start">
+        <h1 className="kanitfont text-4xl text-white">Blog Posts</h1>
+      </div>
+      <div className="w-screen md:h-[920px] h-full flex flex-col-reverse justify-end items-center p-2 gap-6">
         {blogposts.map((blogpost, index) => (
           <div key={index + 1} className='md:w-[1200px] w-[95%] h-[440px] bg-darkergray rounded-2xl'>
             <div className='w-full h-[200px]'>
