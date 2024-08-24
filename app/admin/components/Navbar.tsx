@@ -6,7 +6,7 @@ export default function NavPanel() {
     
     return (
         <div className="">
-            sdsfsddfs
+        
         </div>
     )
 }
