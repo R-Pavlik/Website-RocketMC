@@ -9,42 +9,46 @@ const config: Config = {
   theme: {
     colors: {
       //* project colors
-
-
-
-       danger: '#EE4E4E',
-       info: '#2D9CDB',
-       success: '#6FCF97',
-       warning: '#F2994A',
-       dark: '#45474B',
-       light: '#F8F9FA',
+      danger: '#EE4E4E',
+      info: '#2D9CDB',
+      success: '#6FCF97',
+      warning: '#F2994A',
+      dark: '#45474B',
+      light: '#F8F9FA',
 
       // default colors
       green: '#349934',
       blue: '#0000ff',
       red: '#ff0000',
-      darkred:'#BF2F31',
+      darkred: '#BF2F31',
       yellow: '#ffff00',
       white: '#ffffff',
       black: '#000000',
       gray: '#808080',
-      lightergray:'#333333',
-      darkergray:'#353535',
-      darkgray:'#191818',
-      footergray:'#1E1E1E',
+      lightergray: '#333333',
+      darkergray: '#353535',
+      darkgray: '#191818',
+      footergray: '#1E1E1E',
       gradient_start: '#F9D436',
       gradient_end: '#E96745',
 
-      discord:{
+      discord: {
         blue: '#5865F2'
       },
       instagram: {
-        pink:'#E1306C'
+        pink: '#E1306C'
       }
+    },
+    extend: {
+      fontSize: {
+        '2xs': '0.625rem',
+        '3xs': '0.425rem',
+      },
     },
   },
   plugins: [
     require('@tailwindcss/line-clamp'),
   ],
 };
+
 export default config;
