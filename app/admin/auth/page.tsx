@@ -36,7 +36,6 @@ export default function Auth() {
     return (
         <div className="flex flex-col items-center md:justify-center h-screen bg-darkgray">
             <div className='mb-4 mt-12 md:mt-1 flex justify-center items-center flex-col'>
-                <img src="rocketmc-logo.png" alt="" className='w-[128px]' />
                 <h1 className='kanitfont text-4xl text-white'>LOGIN TO CONTINUE</h1>
             </div>
             <div className="bg-darkergray p-8 rounded-lg shadow-lg md:w-[435px] w-full max-w-md flex justify-center items-center">
