@@ -5,12 +5,9 @@ import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
 
 // Importujte konfiguraci Firebase z externího souboru
-import firebaseConfig from '../api/firebaseConfig';
-import Loader from '../utils/Loader';
+import {db} from "../api/firebaseConfig";
 
-// Inicializujte Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+import Loader from '../utils/Loader';
 
 interface BlogPosts {
   banner: string;

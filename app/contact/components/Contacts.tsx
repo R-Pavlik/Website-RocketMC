@@ -6,12 +6,9 @@ import { FaCode } from "react-icons/fa6";
 import { IoPeople } from "react-icons/io5";
 import { IoMdCloudUpload } from "react-icons/io";
 import { initializeApp } from "firebase/app";
-import firebaseConfig from "../../api/firebaseConfig";
 import Loader from "@/app/utils/Loader";
+import {db} from "../../api/firebaseConfig";
 
-// Firebase konfigurace a inicializace
-initializeApp(firebaseConfig);
-const db = getFirestore();
 
 // Mapování názvů ikon na komponenty ikon
 const iconMap: { [key: string]: React.ComponentType } = {
