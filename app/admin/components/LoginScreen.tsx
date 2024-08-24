@@ -1,5 +1,3 @@
-// app/components/LoginScreen.tsx
-
 "use client"; // Ujistěte se, že komponenta je klientská
 
 import React, { useState } from 'react';
@@ -22,36 +20,48 @@ export default function LoginScreen() {
     };
 
     return (
-        <div className="flex items-center justify-center h-screen bg-light">
-            <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-                <h2 className="text-2xl font-bold mb-6 text-dark">Login</h2>
+        <div className="flex flex-col items-center md:justify-center h-screen bg-darkgray">
+            <div className='mb-4 mt-12 md:mt-1 flex justify-center items-center flex-col'>
+                <img src="rocketmc-logo.png" alt="" className=' w-[128px]'/>
+                <h1 className='   kanitfont text-4xl text-white'>LOGIN TO CONTINUE</h1>
+
+            </div>
+            <div className="bg-darkergray p-8 rounded-lg shadow-lg md:w-[435px] w-full max-w-md flex justify-center items-center">
+                
                 <form onSubmit={handleLogin}>
                     <div className="mb-4">
-                        <label className="block text-dark mb-2">Email:</label>
+                        <label className="block text-white font-bold mb-2 ml-2 lexendfont">EMAIL:</label>
                         <input
                             type="email"
                             value={email}
+                            placeholder='email@example.com'
                             onChange={(e) => setEmail(e.target.value)}
                             required
-                            className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-info focus:border-transparent"
+                            className="w-[365px] px-3 py-2 border border-gray rounded focus:outline-none focus:ring-2 focus:ring-info focus:border-transparent"
                         />
                     </div>
                     <div className="mb-6">
-                        <label className="block text-dark mb-2">Password:</label>
+                        <label className="block text-white font-bold mb-2 ml-2 lexendfont">PASSWORD:</label>
                         <input
                             type="password"
                             value={password}
+                            placeholder='Password123'
                             onChange={(e) => setPassword(e.target.value)}
                             required
-                            className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-info focus:border-transparent"
+                            className="w-[365px] px-3 py-2 border border-gray rounded focus:outline-none focus:ring-2 focus:ring-info focus:border-transparent"
                         />
                     </div>
-                    <button
-                        type="submit"
-                        className="w-full py-2 bg-info text-white rounded hover:bg-info-dark transition duration-300"
-                    >
-                        Login
-                    </button>
+                    <div className="flex justify-center">
+                        <button
+                            type="submit"
+                            className="w-[210px] py-2 text-white rounded-xl hover:opacity-90 transition duration-100"
+                            style={{
+                                background: "linear-gradient(to right, #F9D436, #E96745)"
+                            }}
+                        >
+                            Login
+                        </button>
+                    </div>
                 </form>
                 {error && <p className="mt-4 text-danger">{error}</p>}
             </div>
