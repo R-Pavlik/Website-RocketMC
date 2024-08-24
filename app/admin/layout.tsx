@@ -4,6 +4,7 @@ import { auth } from '../api/firebaseConfig'; // Upravte cestu podle struktury v
 import { onAuthStateChanged } from 'firebase/auth';
 import Navbar from './components/Navbar';
 import LoginScreen from './components/LoginScreen'; // Importujte komponentu přihlašovací stránky
+import Loader from '../utils/Loader';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
@@ -23,7 +24,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     }, []);
 
     if (loading) {
-        return <div>Loading...</div>; // Nebo nějaký indikátor načítání
+        return <Loader /> // Nebo nějaký indikátor načítání
     }
 
     return (
