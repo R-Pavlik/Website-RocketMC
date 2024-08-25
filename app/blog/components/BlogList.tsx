@@ -42,7 +42,7 @@ export default function BlogPostsComponent() {
 
   return (
     <div className="w-screen h-full bg-darkgray">
-      <div className="w-screen h-screen flex flex-col-reverse justify-end items-center p-4 gap-6 bg-darkgray">
+      <div className="w-screen h-full flex flex-col justify-end items-center p-4 gap-6 bg-darkgray">
         {blogposts.map((blogpost) => (
           <div key={blogpost.id} className='md:w-[1200px] w-[95%] h-[440px] bg-darkergray rounded-2xl'>
             <div className='w-full h-[200px]'>

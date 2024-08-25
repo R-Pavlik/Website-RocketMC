@@ -1,17 +1,16 @@
 "use client";  // Označí komponentu jako Client Component
 import React, { useEffect, useState } from 'react';
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
-import { initializeApp } from 'firebase/app';
+import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
+import { db } from "../../../api/firebaseConfig";
+import { FaTrash, FaEdit } from 'react-icons/fa';
 
 interface BlogPosts {
     banner: string;
     title: string;
     description: string;
-    id: number;
+    id: string;  // Changed to string to accommodate Firestore document ID
 }
 
-// Importujte konfiguraci Firebase z externího souboru
-import { db } from "../../../api/firebaseConfig";
 export default function PostList() {
     const [blogposts, setBlogposts] = useState<BlogPosts[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
@@ -21,7 +20,10 @@ export default function PostList() {
             setLoading(true);
             try {
                 const querySnapshot = await getDocs(collection(db, 'posts'));
-                const posts = querySnapshot.docs.map((doc) => doc.data() as BlogPosts);
+                const posts = querySnapshot.docs.map((doc) => ({
+                    ...doc.data(),
+                    id: doc.id  // Add Firestore document ID to the post object
+                })) as BlogPosts[];
                 setBlogposts(posts);
             } catch (error) {
                 console.error('Chyba při načítání příspěvků:', error);
@@ -31,6 +33,15 @@ export default function PostList() {
 
         fetchBlogPosts();
     }, []);
+
+    const handleDelete = async (docId: string) => {
+        try {
+            await deleteDoc(doc(db, 'posts', docId));
+            setBlogposts(blogposts.filter(post => post.id !== docId));
+        } catch (error) {
+            console.error('Chyba při odstraňování příspěvku:', error);
+        }
+    };
 
     return (
         <div className='w-full h-full bg-darkestgray overflow-x-hidden'>
@@ -55,6 +66,15 @@ export default function PostList() {
                             <p className='ml-12 mr-12 mt-1 mb-2 lexendfont line-clamp-6'>
                                 {blogpost.description}
                             </p>
+                            <div className='flex justify-between ml-12 mb-2'>
+                                <button
+                                    onClick={() => handleDelete(blogpost.id)}
+                                    className='text-red-500 hover:text-red-700 transition-colors'
+                                    title="Delete Post"
+                                >
+                                    <FaTrash />
+                                </button>
+                            </div>
                         </div>
                     </div>
                 ))}
