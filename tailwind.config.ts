@@ -28,6 +28,7 @@ const config: Config = {
       lightergray: '#333333',
       darkergray: '#353535',
       darkgray: '#191818',
+      darkestgray:'#0d0c0c',
       footergray: '#1E1E1E',
       gradient_start: '#F9D436',
       gradient_end: '#E96745',

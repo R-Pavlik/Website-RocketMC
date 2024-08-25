@@ -2,7 +2,7 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import PostInfo from './components/PostInfo';
-import Navbar from './components/Navbar';
+import Navbar from '@/app/utils/admin/Navbar';
 
 export default function Page() {
   const router = useRouter();

@@ -1,11 +1,12 @@
+"use client";
 import React from 'react'
 import { useRouter } from 'next/navigation';
 import { FaHome,FaListUl } from 'react-icons/fa'
 import { IoSettingsSharp } from "react-icons/io5";
 import { MdOutlineLogout } from "react-icons/md";
-import { auth } from '../../../api/firebaseConfig';
+import { auth } from '../../api/firebaseConfig';
 import { signOut } from 'firebase/auth';
-import packagesource from "../../../../package.json"
+import packagesource from '../../../package.json'
 const version = packagesource.version
 export default function Navbar() {
     const router = useRouter()
